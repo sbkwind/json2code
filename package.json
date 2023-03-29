@@ -4,15 +4,22 @@
   "description": "A node cli that generate code from json or JavaScript object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --fix",
+    "format": "prettier . --write --loglevel log",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.4.4",
+    "commitlint": "^17.5.1",
     "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1"
+    "eslint-plugin-import": "^2.27.5",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.0"
   },
   "dependencies": {
     "prettier": "^2.8.7"
