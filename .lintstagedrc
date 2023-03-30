@@ -1,7 +1,10 @@
 {
-  "*.{js,cjs,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
-  "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
-    "prettier --write--parser json"
+  "*.{js,cjs,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write --loglevel silent"
   ],
-  "package.json": ["prettier --write"]
+  "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+    "prettier --write--parser json  --loglevel silent"
+  ],
+  "package.json": ["prettier --write  --loglevel silent"]
 }
