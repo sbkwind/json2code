@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A node cli that generate code from json or JavaScript object",
   "main": "index.js",
+  "bin": {
+    "j2c": "./bin/cli.js"
+  },
   "scripts": {
     "lint": "eslint . --fix",
     "format": "prettier . --write --loglevel log",
