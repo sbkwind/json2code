@@ -1,0 +1,26 @@
+{% from "../common/importLibs.njk" import renderLibImport %}
+{% from "../common/importComponents.njk" import renderCompImport %}
+{% from "../common/propTypes.njk" import renderPropTypes %}
+{% from "../common/defaultProps.njk" import renderDefaultProps%}
+
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+{{ renderLibImport(libs) }}
+{{ renderCompImport(components) }}
+
+export default function {{ name }}() {
+  return (
+    <View style={styles.container}>
+      <Text>{{ name }}</Text>
+    </View>
+  );
+}
+
+{{ renderPropTypes(name, props) }}
+
+{{ renderDefaultProps(name, defaultProps) }}
+
+const styles = StyleSheet.create({
+  container: {},
+})

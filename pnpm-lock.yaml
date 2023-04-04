@@ -13,6 +13,9 @@ dependencies:
   npmlog:
     specifier: ^7.0.1
     version: registry.npmmirror.com/npmlog@7.0.1
+  nunjucks:
+    specifier: ^3.2.3
+    version: registry.npmmirror.com/nunjucks@3.2.3
   prettier:
     specifier: ^2.8.7
     version: registry.npmmirror.com/prettier@2.8.7
@@ -450,6 +453,12 @@ packages:
       through: registry.npmmirror.com/through@2.3.8
     dev: true
 
+  registry.npmmirror.com/a-sync-waterfall@1.0.1:
+    resolution: {integrity: sha512-RYTOHHdWipFUliRFMCS4X2Yn2X8M87V/OpSqWzKKOGhzqyUxzyVmhHDH9sAvG+ZuQf/TAOFsLCpMw09I1ufUnA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/a-sync-waterfall/-/a-sync-waterfall-1.0.1.tgz}
+    name: a-sync-waterfall
+    version: 1.0.1
+    dev: false
+
   registry.npmmirror.com/abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/abort-controller/-/abort-controller-3.0.0.tgz}
     name: abort-controller
@@ -604,6 +613,12 @@ packages:
     version: 1.0.1
     engines: {node: '>=0.10.0'}
     dev: true
+
+  registry.npmmirror.com/asap@2.0.6:
+    resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/asap/-/asap-2.0.6.tgz}
+    name: asap
+    version: 2.0.6
+    dev: false
 
   registry.npmmirror.com/astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/astral-regex/-/astral-regex-2.0.0.tgz}
@@ -798,6 +813,13 @@ packages:
     name: commander
     version: 10.0.0
     engines: {node: '>=14'}
+
+  registry.npmmirror.com/commander@5.1.0:
+    resolution: {integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-5.1.0.tgz}
+    name: commander
+    version: 5.1.0
+    engines: {node: '>= 6'}
+    dev: false
 
   registry.npmmirror.com/commitlint@17.5.1:
     resolution: {integrity: sha512-BmYX5GJrZFk/90Owlsoh7J38hbikK1AIE+j0MlU0U+Vns+JNHwOE+6jkU9UYEiyY9rrgrI50kx2thI3028FwGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commitlint/-/commitlint-17.5.1.tgz}
@@ -2085,6 +2107,23 @@ packages:
       console-control-strings: registry.npmmirror.com/console-control-strings@1.1.0
       gauge: registry.npmmirror.com/gauge@5.0.0
       set-blocking: registry.npmmirror.com/set-blocking@2.0.0
+    dev: false
+
+  registry.npmmirror.com/nunjucks@3.2.3:
+    resolution: {integrity: sha512-psb6xjLj47+fE76JdZwskvwG4MYsQKXUtMsPh6U0YMvmyjRtKRFcxnlXGWglNybtNTNVmGdp94K62/+NjF5FDQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/nunjucks/-/nunjucks-3.2.3.tgz}
+    name: nunjucks
+    version: 3.2.3
+    engines: {node: '>= 6.9.0'}
+    hasBin: true
+    peerDependencies:
+      chokidar: ^3.3.0
+    peerDependenciesMeta:
+      chokidar:
+        optional: true
+    dependencies:
+      a-sync-waterfall: registry.npmmirror.com/a-sync-waterfall@1.0.1
+      asap: registry.npmmirror.com/asap@2.0.6
+      commander: registry.npmmirror.com/commander@5.1.0
     dev: false
 
   registry.npmmirror.com/object-inspect@1.12.3:

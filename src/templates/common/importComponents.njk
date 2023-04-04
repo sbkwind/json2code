@@ -1,0 +1,9 @@
+{% macro renderCompImport(components = []) %}
+  {% if (components.length !== 0) %}
+    import {
+      {% for component in components %}
+        {{ component }},
+      {% endfor %}
+    } from './components'
+  {% endif %}
+{% endmacro %}

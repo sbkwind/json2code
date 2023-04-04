@@ -1,0 +1,21 @@
+{% macro renderLibImport(libs = []) %}
+  {% if (libs.length !== 0) %}
+    {% for lib in libs %}
+      import 
+        {% if lib.defaultImport.length !== 0 %}
+          {{ lib.defaultImport[0] }}
+          {% if lib.defaultImport.length !== 0 and lib.namedImport.length !== 0 %}
+            ,
+          {% endif %}
+        {% endif %}
+        {% if lib.namedImport.length !== 0 %}
+          {
+            {% for item in lib.namedImport %}
+              {{ item }},
+            {% endfor %}
+          }
+        {% endif %}
+      from '{{ lib.name }}';
+    {% endfor %}
+  {% endif %}
+{% endmacro %}

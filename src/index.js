@@ -6,6 +6,7 @@ import {
   deleteCmd,
   restoreCmd,
 } from './commands/config/index.js';
+import './commands/create/index.js';
 
 const program = new Command('j2c');
 
@@ -18,5 +19,9 @@ configCmd
   .argument('<keys...>')
   .action(deleteCmd.action);
 configCmd.command(restoreCmd.name).action(restoreCmd.action);
+
+// const createCmd = program.command('create');
+
+// createCmd.action();
 
 program.parse(process.argv);

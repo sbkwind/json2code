@@ -1,0 +1,17 @@
+{% macro renderPropTypes(name, props = []) %}
+  {% if (props.length !== 0) %}
+    {{ name }}.propTypes = {
+      {% for prop in props %}
+        {% if prop.type.length === 1 %}
+          {{ prop.key }}: PropTypes.{{ prop.type }}{% if prop.isRequired %}.isRequired{% endif %},
+        {% else %}
+          {{ prop.key}}: PropTypes.oneOfType([
+            {% for type in prop.type %}
+              PropTypes.{{ type }},
+            {% endfor %}
+          ]){% if prop.isRequired %}.isRequired{% endif %},
+        {% endif%}
+      {% endfor %}
+    }
+  {% endif %}
+{% endmacro %}
