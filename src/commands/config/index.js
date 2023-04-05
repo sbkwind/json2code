@@ -1,6 +1,11 @@
-import getCmd from './get.js';
-import setCmd from './set.js';
-import deleteCmd from './delete.js';
-import restoreCmd from './restore.js';
+const getConfig = require('./get');
+const setConfig = require('./set');
+const deleteConfig = require('./delete');
+const resetConfig = require('./reset');
 
-export { getCmd, setCmd, deleteCmd, restoreCmd };
+module.exports = {
+  getConfig,
+  setConfig,
+  deleteConfig,
+  resetConfig,
+};

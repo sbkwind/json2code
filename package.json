@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A node cli that generate code from json or JavaScript object",
   "main": "index.js",
-  "type": "module",
   "bin": {
     "j2c": "./src/index.js"
   },
@@ -24,11 +23,14 @@
     "lint-staged": "^13.2.0"
   },
   "dependencies": {
+    "chalk": "4",
+    "cli-spinners": "^2.7.0",
     "commander": "^10.0.0",
-    "configstore": "^6.0.0",
     "fs-extra": "^11.1.1",
     "npmlog": "^7.0.1",
     "nunjucks": "^3.2.3",
-    "prettier": "^2.8.7"
+    "ora": "^5.4.1",
+    "prettier": "^2.8.7",
+    "slash": "^3.0.0"
   }
 }

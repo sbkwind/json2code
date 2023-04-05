@@ -1,31 +1,28 @@
-import { setConfig } from '../../configStore/index.js';
+const { setConfig } = require('../../configStore');
 
 const regExp = /^(.*?)=(.*)$/;
-const name = 'set';
 
-/**
- * @param {Array} data
- */
-function action(data) {
+module.exports = function action(config) {
+  if (config.length === 0) {
+    return;
+  }
+  const data = {};
+  const len = config.length;
   let index = 0;
-  while (index < data.length) {
+  while (index < len) {
     let key;
     let value;
-    if (regExp.test(data[index])) {
-      [, key, value] = data[index].match(regExp);
+    if (regExp.test(config[index])) {
+      [, key, value] = config[index].match(regExp);
       index += 1;
     } else {
-      key = data[index];
-      value = data[index + 1];
+      key = config[index];
+      value = config[index + 1];
       index += 2;
     }
     if (!!key && !!value) {
-      setConfig(key, value);
+      data[key] = value;
     }
   }
-}
-
-export default {
-  name,
-  action,
+  setConfig(data);
 };

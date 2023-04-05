@@ -1,17 +1,8 @@
-import { deleteConfig } from '../../configStore/index.js';
+const { deleteConfig } = require('../../configStore');
 
-const name = 'delete';
-
-/**
- * @param {Array} keys
- */
-function action(keys) {
-  keys.forEach((key) => {
-    deleteConfig(key);
-  });
-}
-
-export default {
-  name,
-  action,
+module.exports = function action(keys) {
+  if (keys.length === 0) {
+    return;
+  }
+  deleteConfig(...keys);
 };

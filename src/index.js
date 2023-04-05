@@ -1,27 +1,11 @@
 #!/usr/bin/env node
-import { Command } from 'commander';
-import {
-  getCmd,
-  setCmd,
-  deleteCmd,
-  restoreCmd,
-} from './commands/config/index.js';
-import './commands/create/index.js';
+const { initConfigStore } = require('./configStore');
+const registerCommand = require('./commands');
 
-const program = new Command('j2c');
+initConfigStore();
 
-const configCmd = program.command('config');
+registerCommand();
 
-configCmd.command(getCmd.name).argument('[keys...]').action(getCmd.action);
-configCmd.command(setCmd.name).argument('<entries...>').action(setCmd.action);
-configCmd
-  .command(deleteCmd.name)
-  .argument('<keys...>')
-  .action(deleteCmd.action);
-configCmd.command(restoreCmd.name).action(restoreCmd.action);
-
-// const createCmd = program.command('create');
-
-// createCmd.action();
-
-program.parse(process.argv);
+// configCmd.command('set').argument('<entries...>').action(setAction);
+// configCmd.command('delete').argument('<keys...>').action(deleteAction);
+// configCmd.command('restore').action(restoreAction);
