@@ -1,18 +1,15 @@
-import nunjucks from 'nunjucks';
-import prettier from 'prettier';
-import { RNTemplates, common } from './tempPath.js';
+// const path = require('path');
+const { getConfig, getDefaultConfig } = require('../../configStore');
+const { buildData, generateCode } = require('../../core');
 
-// eslint-disable-next-line no-unused-vars
-import { viewData, functionData, classData } from './test.js';
-
-const env = new nunjucks.Environment(
-  new nunjucks.FileSystemLoader([RNTemplates, common]),
-  {
-    trimBlocks: true,
-    lstripBlocks: true,
-  }
-);
-
-const code = env.render('class.njk', classData);
-
-console.log(prettier.format(code, { parser: 'babel' }));
+module.exports = function action(options) {
+  const userConfig = { ...getDefaultConfig(), ...getConfig(), ...options };
+  // const configFilePath = path.join(process.cwd(), userConfig.configFile);
+  const userConfigFile = './test.js';
+  const userData = require(userConfigFile);
+  const data = buildData(userData);
+  data.forEach((item) => {
+    const code = generateCode(item, userConfig);
+    console.log(code);
+  });
+};

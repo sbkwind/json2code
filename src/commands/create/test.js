@@ -1,106 +1,105 @@
-export const viewData = {
-  name: 'XXXView',
-  components: ['Header', 'Body', 'Footer'],
-  libs: [
+module.exports = {
+  name: 'XXXPage',
+  type: 'view',
+  components: [
     {
-      name: 'UI',
-      namedImport: ['Search', 'Image'],
-      defaultImport: [],
+      name: 'Header',
+      type: 'function',
+      props: [
+        {
+          key: 'title',
+          type: 'string',
+          isRequired: true,
+        },
+      ],
+      components: [
+        {
+          name: 'Title',
+          type: 'class',
+          props: [
+            {
+              key: 'title',
+              type: 'string',
+              default: 'card Title',
+            },
+            {
+              key: 'subTitle',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'UI/Button',
-      namedImport: [],
-      defaultImport: ['Button'],
+      name: 'Body',
+      type: 'class',
+      props: [
+        {
+          key: 'title',
+          type: 'string',
+          isRequired: true,
+          default: 'body title',
+        },
+        {
+          key: 'oneOfProp',
+          type: ['string', 'number', 'bool'],
+        },
+      ],
+      libs: [
+        {
+          name: 'moment',
+          items: [
+            {
+              name: 'Moment',
+              importType: 'default',
+            },
+          ],
+        },
+        {
+          name: 'element',
+          items: [
+            {
+              name: 'Button',
+              importType: 'named',
+            },
+            {
+              name: 'Menu',
+              importType: 'named',
+            },
+          ],
+        },
+        {
+          name: 'projectDefined',
+          items: [
+            {
+              name: 'defaultImport',
+              importType: 'default',
+            },
+            {
+              name: 'namedImport1',
+              importType: 'named',
+            },
+            {
+              name: 'namedImport2',
+              importType: 'named',
+            },
+          ],
+        },
+      ],
     },
     {
-      name: 'UI/Empty',
-      namedImport: ['Empty'],
-      defaultImport: [],
-    },
-    {
-      name: 'UI/Modal',
-      namedImport: ['SlideModal'],
-      defaultImport: ['Modal'],
-    },
-  ],
-};
-
-export const functionData = {
-  name: 'FunctionComponent',
-  components: ['Header', 'Body', 'Footer'],
-  props: [
-    {
-      key: 'propA',
-      type: ['string'],
-      isRequired: false,
-    },
-    {
-      key: 'propB',
-      type: ['string', 'bool', 'number'],
-      isRequired: true,
-    },
-  ],
-  defaultProps: [{ key: 'propA', value: '123' }],
-  libs: [
-    {
-      name: 'UI',
-      namedImport: ['Search', 'Image'],
-      defaultImport: [],
-    },
-    {
-      name: 'UI/Button',
-      namedImport: [],
-      defaultImport: ['Button'],
-    },
-    {
-      name: 'UI/Empty',
-      namedImport: ['Empty'],
-      defaultImport: [],
-    },
-    {
-      name: 'UI/Modal',
-      namedImport: ['SlideModal'],
-      defaultImport: ['Modal'],
-    },
-  ],
-};
-
-export const classData = {
-  name: 'ClassComponent',
-  components: ['Header', 'Body', 'Footer'],
-  props: [
-    {
-      key: 'propA',
-      type: ['string'],
-      isRequired: false,
-    },
-    {
-      key: 'propB',
-      type: ['string', 'bool', 'number'],
-      isRequired: true,
-    },
-  ],
-  defaultProps: [{ key: 'propA', value: '123' }],
-  libs: [
-    {
-      name: 'UI',
-      namedImport: ['Search', 'Image'],
-      defaultImport: [],
-    },
-    {
-      name: 'UI/Button',
-      namedImport: [],
-      defaultImport: ['Button'],
-    },
-    {
-      name: 'UI/Empty',
-      namedImport: ['Empty'],
-      defaultImport: [],
-    },
-    {
-      name: 'UI/Modal',
-      namedImport: ['SlideModal'],
-      defaultImport: ['Modal'],
+      name: 'Footer',
+      type: 'function',
+      components: [
+        {
+          name: 'About',
+          type: 'function',
+        },
+        {
+          name: 'ConnectUs',
+          type: 'function',
+        },
+      ],
     },
   ],
 };

@@ -81,10 +81,15 @@ function resetConfig(...keys) {
   setStore(store);
 }
 
+function getDefaultConfig() {
+  return defaultConfig;
+}
+
 module.exports = {
   initConfigStore,
   getConfig,
   setConfig,
   deleteConfig,
   resetConfig,
+  getDefaultConfig,
 };
