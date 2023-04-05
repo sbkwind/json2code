@@ -1,8 +1,8 @@
 {% macro renderDefaultProps(name, props = []) %}
-  {% if (prop.length !== 0) %}
+  {% if (props.length !== 0) %}
     {{ name }}.defaultProps = {
       {% for prop in props %}
-        {{ prop.key }}: {{ prop.value }},
+        {{ prop.key }}: '{{ prop.value }}',
       {% endfor %}
     }
   {% endif %}
