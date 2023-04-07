@@ -4,6 +4,7 @@ const fse = require('fs-extra');
 const path = require('path');
 const ora = require('ora');
 const chalk = require('chalk');
+const slash = require('slash');
 
 function writeFile(input, config) {
   const data = buildData(input);
@@ -14,12 +15,14 @@ function writeFile(input, config) {
     );
     const spinner = ora({
       spinner: 'clock',
-      text: `now is creating ${chalk.cyan.bold(filePath)}.`,
+      text: `now is creating ${slash(chalk.cyan.bold(filePath))}.`,
     }).start();
     const code = generateCode(item, config);
     fse.ensureDirSync(path.dirname(filePath));
     fse.writeFileSync(filePath, code);
-    spinner.succeed(`${chalk.cyan.bold(filePath)} is created successfully!!`);
+    spinner.succeed(
+      `${slash(chalk.cyan.bold(filePath))} is created successfully!!`
+    );
   });
 }
 
