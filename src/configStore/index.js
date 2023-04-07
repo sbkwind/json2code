@@ -1,7 +1,7 @@
 const fse = require('fs-extra');
 const path = require('path');
-const { logger } = require('../utils.js');
-const defaultConfig = require('./default.js');
+const { logger } = require('../utils');
+const defaultConfig = require('./default');
 
 const CONIFG_STORE_FILE_NAME = '__user_preference_config__.json';
 const CONFIG_STORE_PATH = path.join(__dirname, CONIFG_STORE_FILE_NAME);

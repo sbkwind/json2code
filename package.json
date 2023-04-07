@@ -23,6 +23,7 @@
     "lint-staged": "^13.2.0"
   },
   "dependencies": {
+    "ajv": "^8.12.0",
     "chalk": "4",
     "cli-spinners": "^2.7.0",
     "commander": "^10.0.0",

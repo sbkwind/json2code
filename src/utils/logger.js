@@ -1,5 +1,4 @@
 const { info, warn, error } = require('npmlog');
-
 const logger = {
   info(msg) {
     info('j2c', msg);
@@ -12,6 +11,4 @@ const logger = {
   },
 };
 
-module.exports = {
-  logger,
-};
+module.exports = logger;
