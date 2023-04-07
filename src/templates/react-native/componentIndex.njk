@@ -1,0 +1,9 @@
+{% for component in components %}
+  import {{ component }} from './{{ component }}';
+{% endfor %}
+
+export {
+  {% for component in components %}
+    {{ component }},
+  {% endfor %}
+}

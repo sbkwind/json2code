@@ -11,14 +11,11 @@ const env = new nunjucks.Environment(
 );
 
 /**
- * 描述
  * @param {Object} data
- * @param {Object} config
  * @returns {String}
  */
-function generateCode(data, config) {
-  const type = data.type || config.type;
-  const code = env.render(RNTemplateMap[type], data);
+function generateCode(data) {
+  const code = env.render(RNTemplateMap[data.type], data);
   return prettier.format(code, { parser: 'babel' });
 }
 

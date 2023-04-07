@@ -1,9 +1,11 @@
 const path = require('path');
+const { TYPES } = require('../contants');
 
 const RNTemplateMap = {
-  view: 'view.njk',
-  function: 'function.njk',
-  class: 'class.njk',
+  [TYPES.view]: 'view.njk',
+  [TYPES.function]: 'function.njk',
+  [TYPES.class]: 'class.njk',
+  [TYPES.index]: 'componentIndex.njk',
 };
 
 module.exports = {

@@ -19,7 +19,6 @@ module.exports = {
           props: [
             {
               key: 'title',
-              type: 'string',
               default: 'card Title',
             },
             {
