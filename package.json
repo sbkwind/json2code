@@ -1,7 +1,7 @@
 {
   "name": "json2code",
   "version": "1.0.0",
-  "description": "A node cli that generate code from json or JavaScript object",
+  "description": "A node cli that generate code from JSON or JavaScript object",
   "main": "index.js",
   "bin": {
     "j2c": "bin/cli.js"
