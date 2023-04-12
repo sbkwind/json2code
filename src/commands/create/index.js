@@ -9,7 +9,14 @@ module.exports = function action(options) {
   const userData = require(userConfigFile);
   const valid = validateJSON(userData);
   if (!valid) {
-    logger.error('config file is not valide!!');
+    const { errors } = validateJSON;
+    logger.error('config file is not valide!!\n');
+    for (let err of errors) {
+      logger.error(`message: ${err.message}`);
+      logger.error(`path: ${err.instancePath}`);
+      logger.error(err.params);
+      console.log('\n');
+    }
     process.exit(1);
   }
   writeFile(userData, userConfig);

@@ -18,7 +18,7 @@ const supportPropTypes = [
 const supportImportTypes = ['named', 'default'];
 
 const Ajv = require('ajv');
-const ajv = new Ajv();
+const ajv = new Ajv({ allErrors: true });
 
 const schema = {
   definitions: {
