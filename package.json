@@ -6,14 +6,22 @@
   "bin": {
     "j2c": "bin/cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbkwind/json2code"
+  },
+  "homepage": "https://github.com/sbkwind/json2code#readme",
   "scripts": {
     "lint": "eslint . --fix",
     "format": "prettier . --write --loglevel log",
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "CLI",
+    "code generator"
+  ],
+  "author": "sbkwind",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.4",
     "commitlint": "^17.5.1",
