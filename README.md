@@ -1,24 +1,24 @@
-# `json2code`
+# `j2c-cli`
 
 ## 是什么
 
-`json2code`是一个用于生成`react-native`代码的`cli`工具。
+`j2c-cli`是一个用于生成`react-native`代码的`cli`工具。
 
 ## 为什么
 
 我们在使用`react-native`开发前端页面时，通常会这样组织文件结构：新建`XXXPage`文件夹，新建`index.js`作为页面组件，新建`components`文件夹存放该页面的组件，在`components`文件夹中新建`ComponentA.js`，`ComponentA.js`等组件，并新建`index.js`作为入口文件。每个组件中还要引入`react`,`react-native`等基础库，以及`prop-types`来校验`prop`的类型，流程枯燥且繁琐。
 
-`json2code`就是为了解决这个问题诞生的。使用`json2code`，用户通过定义一个表示文件结构和组件信息的对象，就可以生成所需要的文件以及基础的代码框架，包括组件的基础框架，组件依赖的其他组件以及第三方库，组件`props`的类型检查等。
+`j2c-cli`就是为了解决这个问题诞生的。使用`j2c-cli`，用户通过定义一个表示文件结构和组件信息的对象，就可以生成所需要的文件以及基础的代码框架，包括组件的基础框架，组件依赖的其他组件以及第三方库，组件`props`的类型检查等。
 
 ## 怎么用
 
 ### 命令
 
-`json2code`提供了两个命令：`j2c config`和`j2c create`。`j2c config`命令用于个性化定义`json2code`的全局配置，`j2c create`用户生成代码。
+`j2c-cli`提供了两个命令：`j2c config`和`j2c create`。`j2c config`命令用于个性化定义`j2c-cli`的全局配置，`j2c create`用户生成代码。
 
 ### `j2c config`
 
-`json2code`提供了两个默认全局配置：用户定义的配置文件名(默认为`j2c.js`)和默认生成的组件类型(`class`组件)
+`j2c-cli`提供了两个默认全局配置：用户定义的配置文件名(默认为`j2c.js`)和默认生成的组件类型(`class`组件)
 
 `j2c config`提供了四个子命令：
 
@@ -176,6 +176,6 @@ module.exports = {
 
 ## 后续展望
 
-- 目前`json2code`只支持生成`react-native`代码，未来将支持`react`和`vue`
+- 目前`j2c-cli`只支持生成`react-native`代码，未来将支持`react`和`vue`
 - 用户编写配置文件过于繁琐，且容易出错，未来支持可视化配置的方式，实现类似`vue ui`的功能
 - 扩展代码模板，支持用户自定义模板

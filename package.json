@@ -1,5 +1,5 @@
 {
-  "name": "json2code",
+  "name": "j2c-cli",
   "version": "1.0.0",
   "description": "A node cli that generate code from JSON or JavaScript object",
   "main": "index.js",
